@@ -1,0 +1,17 @@
+An app.js file is there where all the wroking of the code is done.In terminal also this file is run
+An home.ejs file is made in views folder which is rendered in the models(campground.js file)
+In this campground.js file the whole mongoose schema is written 
+In the seed folder the two files, the cities and the index.js is present with previous data so that we can work on that data 
+In index.js of the seed folder all the connection with the mongoose is done,and the 50 items are added from the data,all the states and 
+cities are added.Here also random generation of the images takes place, the location,price,description all the stuff is added as mentioned in the schema 
+Also the connection is closed after the work is once done 
+In views folder ,in layouts in boilerplate.ejs file all the html is written  
+In partials folder there are two files footer.ejs and navbar.ejs so that the footer and navbar can be added to the web page ,in the bolierplate only the 
+main body part is written 
+In campgrounds folder of the views the edit.ejs,index.ejs,new.ejs,show.ejs are there were how the create ,show and edit webpages will look also 
+bootstrap is used in all these cases.in this the boilerplate is included so that the navbar and the footer can be added...
+in utils folder all the error handling part is mentioned 
+catchAsync.js is used to wrap an async function so that we can handle any error if faced
+In ExpressError.js we are creating a custom error file where we are extending the Error class and we export the module 
+In error.ejs ,we including the boilerplate.ejs file and in this the error message will be displayed
+instead of the joi we could have used the express validator but the syntax is kind of strange ..

@@ -1,0 +1,52 @@
+In lec 417--> Only the app.js part is written all the connection with mongoose and express is done.In views folder a home.ejs is made which is rendered 
+  in campgrounds.js file of the module folder we are creating the schema and also exporting the modules 
+In lec 418--> the cities and seedhelpers is seeded so that some data we already have, can be added to the database or rather saying we can work with that 
+  In this index.js is made in seed folder in which its own connection with connection is made and also we are adding 50 items into the database
+In lec 419-->In views, campgrounds folder a index.ejs is made so that it can be rendered in localhost/campgrounds, where all the campgrounds title is present and on clicking that 
+an href is present which takes u to the localhost/campgrounds/_id 
+In lec 420--> it is kind of continuation of the previous lec where show.ejs is made so that the when it redirects it shows the title and the location of the campgrounds
+In lec 421-->we are making a form in the new.ejs where it is adding on new campgrounds as entered by the user,here after it is added it will redirect to the id of that data
+In lec 422--> we are editing we make a edit.ejs file ,in app.js we also add the put as we are editing the data, in the form action add the method as put ,also we are
+adding a button for editing ,according to the find id it will delete that particular id or data 
+in lec 423--> we are deleting the data or the item almost the same procedure is followed, in the show.ejs we are adding the delete button part also in this we are adiing the 
+method delete ....
+//boilerplate is made which contains all the html part except the body so that again again in the layouts we don't have to write that part 
+again for that we are using the partials folder in views folder so that it  needs to be repeated.For this we boilerplate we are using the ejs-mate (we are installing and requiring that part)
+in the boilerplate all the includes are being made, for the structure check the format once 
+In all the campgrounds files like edit,index,show,new all the alerts part is added like the novalidate and the class and the required
+And in all the async functions add the catchAsync so that it catches the error and passes to the next(err).used to catch the errors which takes place in the func middleware function 
+In the app.all in this statement all the requests ka error will be handled and the ExpressError is called so that particular message and statuscode will be printed 
+In the app.js also u need to add the ExpressError and catchAsync files 
+While it is very important that u add a new campgrounds its very important that all the text field needs to be filled ,also with using the 
+required in the forms u can stop that if someone has not filled but by using the ajax or postman still a new campground can be added with many fields still pending
+Therefore we are using the joi so that anywhere we use the error can be handled successfully 
+In that we are using the Joi.object so that the all the fields such as title,price others pertaining to that should be added 
+and if the user doesn't provide all the fields it will present an error  
+Also writing the joi again instead that of it we can use the middleware validatecampgrounds so that it can be used in all the places(just not in post only)
+In app.use ,the middleware function structure contains the err,req,res,next .In this according to the structure it contains statuscode and message is added and in this we render the error.ejs so that we can present all the message, the body of the error which needs to be handled
+In error.ejs -->In this we are showing the err.stack which is very helpful for the developers,also in this the err.message is visible 
+Middleware--> it is a function or a series of functions to handle error or in authentication and logging .It is done in the between of the first request and the final response   
+joi--> javascript validator
+in the reviews section we see the fact that the in the schemas.js file the module .exports the reviews schema part is added and the joi part is added 
+In campground.js file,the review part is being added...
+A new reviews.js file is being made so that the things that will be added in the review section can be mentioned and also we are exporting that particular file
+All the review part is being done in the show.ejs file a kinda of form is made also a for loop is iterated so that the multiple reviews can be seen
+Also in the show.ejs a paragraph is being made so that the review entered by the user can be added be seen there itself.. 
+Also to that the novalidate part is being added (for the validation part)
+In app.js file the app.post request is being made so that the file so that the review is made only for a particular campground and that is done with the help of that particular id 
+Also in app.js populating is very important in the campground/:id (of get request)
+We use the passport nodejs authentication middleware for Nodejs,so that we have a set of the strategies to support the authentication ...
+in navbar.ejs file we have added the login,logout and registerv part so that the can be added to the navbar and that if is prssent so that the only currentuser can access that part whoever is login
+
+Cloudinary is used as for the upload of the images (it is a SAAS model cloud),it is kind of image and video APIs.We will upload any image or video and it will return me the url of the same 
+Multer which is used to parse or handle mutlipart form data which is used for uploading files.it is basically used to parse the json file or may be the url to be encoded.it is used to pass the form info ,the multipart form and then it will store the file on request file ..
+will pass that parsed info to Cloudinary to generate the urls and store that in the database
+dotenv-->that loads the variable locally like in a secret file so that it is not visible with all the people .
+we would be using the multer storage Cloudinary,which helps in working of the multer with the ordinary so that it helps in uploading the files that multer is parsing and then passing to the cloudinary. 
+cloudinary image transform api is being used so that we can change the opacity,size or something transformation can be done while considering the image uploadation.We can crop ,do all the stuff related with the images .
+For the mapbox we are going to use the mapbox geocoding API,here we will be using the forward geocoding service where the place will be given and we have to get the latitude for the same 
+ExpressMongooseSanitize--> is used to remove any keys containing any prohibited keys,if we want to search for any query and we end up adding any random prohibited keys like $,then we have to use this .
+XSS-->cross site scripting in which malicious scripts are injected into trusted websites
+When web application allows to inject client-side scripts into web pages which has to be viewed by the users.
+sanitize-html helps in sanitizing the inputs(meanss that part of the html where the XSS malicious part can be taken place)
+it will kind of provide me a empty string(like we can't give any kind of tags or something like that in the title or something like that )
